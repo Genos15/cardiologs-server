@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "es2017",
+    "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noErrorTruncation": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "paths": {
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@domains/*": [
+        "src/domains/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ]
+    }
+  },
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  },
+  "ts-jest": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "package.json"
+  ],
+  "exclude": [
+    "node_modules/**/*",
+    "dist/**/*"
+  ]
+}
