@@ -10,9 +10,14 @@ import {errorCodes} from "fastify";
 export const initializeApp = async () => {
     try {
         fastifyApp.register(fastifyEnv, environmentVars())
+
+        await fastifyApp.after()
+
         fastifyApp.register(cors, {
-            origin: 'http://localhost:3000',
+            origin: fastifyApp.config.CLIENT_URL,
         })
+
+        console.log('CORS', fastifyApp.config.CLIENT_URL)
 
         fastifyApp.register(fastifyMultipart, {
             limits: {

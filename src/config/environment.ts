@@ -1,6 +1,6 @@
 const envSchema = {
     type: 'object',
-    required: ['PORT'],
+    required: ['PORT', 'CLIENT_URL'],
     properties: {
         PORT: {
             type: 'number',
@@ -9,6 +9,9 @@ const envSchema = {
         SERVER_LOGGER_LEVEL: {
             type: 'string',
             default: 'info'
+        },
+        CLIENT_URL: { 
+            type: 'string'
         }
     }
 }
@@ -26,6 +29,7 @@ declare module 'fastify' {
         config: {
             PORT: number,
             SERVER_LOGGER_LEVEL: string,
+            CLIENT_URL: string
         };
     }
 }
